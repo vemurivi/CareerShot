@@ -1,0 +1,38 @@
+<div class="experience-container" *ngIf="userProfile$ | async as userProfile">
+    <h2>My Experience</h2>
+    <div class="skills-grid">
+      <div *ngIf="userProfile.skills.frontend.length > 0" class="skills-column">
+        <h4>Frontend Development</h4>
+        <div *ngFor="let skill of userProfile.skills.frontend">
+          <p><i class="material-icons">web</i> {{ skill.Name }} - {{ skill.Level }}</p>
+        </div>
+      </div>
+      <div *ngIf="userProfile.skills.backend.length > 0" class="skills-column">
+        <h4>Backend Development</h4>
+        <div *ngFor="let skill of userProfile.skills.backend">
+          <p><i class="material-icons">api</i> {{ skill.Name }} - {{ skill.Level }}</p>
+        </div>
+      </div>
+      <div *ngIf="userProfile.skills.devops.length > 0" class="skills-column">
+        <h4>DEVOPS</h4>
+        <div *ngFor="let skill of userProfile.skills.devops">
+          <p><i class="material-icons">build</i> {{ skill.Name }} - {{ skill.Level }}</p>
+        </div>
+      </div>
+      <div *ngIf="userProfile.skills.sapTechnical.length > 0 || userProfile.skills.sapFunctional.length > 0" class="sap-skills">
+        <div *ngIf="userProfile.skills.sapTechnical.length > 0" class="skills-column">
+          <h4>SAP Technical</h4>
+          <div *ngFor="let skill of userProfile.skills.sapTechnical">
+            <p><i class="material-icons">cogs</i> {{ skill.Name }} - {{ skill.Level }}</p>
+          </div>
+        </div>
+        <div *ngIf="userProfile.skills.sapFunctional.length > 0" class="skills-column">
+          <h4>SAP Functional</h4>
+          <div *ngFor="let skill of userProfile.skills.sapFunctional">
+            <p><i class="material-icons">cogs</i> {{ skill.Name }} - {{ skill.Level }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

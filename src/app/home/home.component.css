@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.app {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('/assets/bgm.jpg'); /* Ensure the correct path to the image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4; /* Light grey background */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+  width: max-content;
+  height: max-content;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 70%; /* Circular image */
+}
+
+.about-content {
+  max-width: 800px; /* Adjust based on your layout */
+  background: #f9f9f9; /* Light background for the text */
+  border-radius: 10px;
+  padding: 20px;
+  color: black;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Optional: adds depth */
+}
+
+.about-content h2 {
+  margin-top: 0;
+}
+
+.about-content p {
+  font-size: 1.1rem; /* Larger text for readability */
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.social-media a {
+  margin: 0 10px;
+  color: #333; /* Icon color */
+  font-size: 24px; /* Icon size */
+}
+
+.social-media a:hover {
+  color: #007bff; /* Color change on hover */
+}

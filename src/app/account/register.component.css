@@ -1,0 +1,41 @@
+/* src/app/register/register.component.css */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: url('/assets/bgm.jpg') no-repeat center center fixed; /* This is the line for the background image */
+    background-size: cover;
+  }
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-card {
+    width: 800px; /* Adjust the width as needed */
+  }
+  
+  h3, h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  mat-form-field, mat-checkbox, mat-select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .file-input-container {
+    margin-bottom: 10px;
+  }
+  
+  .file-input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="file"] {
+    display: block;
+    width: 100%;
+  }
+  

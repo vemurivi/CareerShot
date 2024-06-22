@@ -1,0 +1,48 @@
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(119, 190, 237, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 50%;
+    height:60%;
+  }
+  
+  .skills-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .skills-column {
+    background-color: #f5f7f8;
+    color: #1b9fd3;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 200px;
+    text-align: left; /* Changed to left align the text */
+  }
+  
+  .skills-column h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .skills-column p {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .skills-column p i {
+    margin-right: 8px; /* Adds space between the icon and text */
+  }
+  

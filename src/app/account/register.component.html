@@ -1,0 +1,129 @@
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card class="form-card">
+      <mat-card-title class="form-title">Portfolio Form</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="full-width form-field" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" id="name" name="name" required>
+        </mat-form-field>
+        <mat-form-field class="full-width form-field" appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" id="description" name="description" required></textarea>
+        </mat-form-field>
+
+        <div class="file-input-container">
+          <label for="photo" class="file-input-label">Photo (JPEG, PNG, JPG)</label>
+          <input type="file" id="photo" name="photo" (change)="onFileChange($event, 'photo')" required>
+        </div>
+
+        <div class="file-input-container">
+          <label for="resume" class="file-input-label">Resume (PDF)</label>
+          <input type="file" id="resume" name="resume" (change)="onFileChange($event, 'resume')" required>
+        </div>
+
+        <mat-form-field class="full-width form-field" appearance="outline">
+          <mat-label>LinkedIn URL</mat-label>
+          <input matInput formControlName="linkedin" id="linkedin" name="linkedin">
+        </mat-form-field>
+        <mat-form-field class="full-width form-field" appearance="outline">
+          <mat-label>GitHub URL</mat-label>
+          <input matInput formControlName="github" id="github" name="github">
+        </mat-form-field>
+
+        <h3 class="skills-title">Skills</h3>
+        <mat-tab-group class="custom-tab-group">
+          <!-- Developer Skills Tab -->
+          <mat-tab label="Developer">
+            <div formGroupName="skills">
+              <div formArrayName="frontend">
+                <h4 class="skills-subtitle">Frontend Development</h4>
+                <div *ngFor="let skill of frontendSkills.controls; let i = index" [formGroupName]="i">
+                  <mat-checkbox class="form-checkbox">{{ skill.get('name')?.value }}</mat-checkbox>
+                  <mat-form-field class="full-width form-field" appearance="outline">
+                    <mat-label>Skill Level</mat-label>
+                    <mat-select formControlName="level">
+                      <mat-option value="beginner">Beginner</mat-option>
+                      <mat-option value="intermediate">Intermediate</mat-option>
+                      <mat-option value="experienced">Experienced</mat-option>
+                      <mat-option value="advanced">Advanced</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div formArrayName="backend">
+                <h4 class="skills-subtitle">Backend Development</h4>
+                <div *ngFor="let skill of backendSkills.controls; let i = index" [formGroupName]="i">
+                  <mat-checkbox class="form-checkbox">{{ skill.get('name')?.value }}</mat-checkbox>
+                  <mat-form-field class="full-width form-field" appearance="outline">
+                    <mat-label>Skill Level</mat-label>
+                    <mat-select formControlName="level">
+                      <mat-option value="beginner">Beginner</mat-option>
+                      <mat-option value="intermediate">Intermediate</mat-option>
+                      <mat-option value="experienced">Experienced</mat-option>
+                      <mat-option value="advanced">Advanced</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div formArrayName="devops">
+                <h4 class="skills-subtitle">DevOps</h4>
+                <div *ngFor="let skill of devopsSkills.controls; let i = index" [formGroupName]="i">
+                  <mat-checkbox class="form-checkbox">{{ skill.get('name')?.value }}</mat-checkbox>
+                  <mat-form-field class="full-width form-field" appearance="outline">
+                    <mat-label>Skill Level</mat-label>
+                    <mat-select formControlName="level">
+                      <mat-option value="beginner">Beginner</mat-option>
+                      <mat-option value="intermediate">Intermediate</mat-option>
+                      <mat-option value="experienced">Experienced</mat-option>
+                      <mat-option value="advanced">Advanced</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+
+          <!-- SAP Skills Tab -->
+          <mat-tab label="SAP">
+            <div formGroupName="skills">
+              <div formArrayName="sapTechnical">
+                <h4 class="skills-subtitle">SAP Technical</h4>
+                <div *ngFor="let skill of sapTechnicalSkills.controls; let i = index" [formGroupName]="i">
+                  <mat-checkbox class="form-checkbox">{{ skill.get('name')?.value }}</mat-checkbox>
+                  <mat-form-field class="full-width form-field" appearance="outline">
+                    <mat-label>Skill Level</mat-label>
+                    <mat-select formControlName="level">
+                      <mat-option value="beginner">Beginner</mat-option>
+                      <mat-option value="intermediate">Intermediate</mat-option>
+                      <mat-option value="experienced">Experienced</mat-option>
+                      <mat-option value="advanced">Advanced</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div formArrayName="sapFunctional">
+                <h4 class="skills-subtitle">SAP Functional</h4>
+                <div *ngFor="let skill of sapFunctionalSkills.controls; let i = index" [formGroupName]="i">
+                  <mat-checkbox class="form-checkbox">{{ skill.get('name')?.value }}</mat-checkbox>
+                  <mat-form-field class="full-width form-field" appearance="outline">
+                    <mat-label>Skill Level</mat-label>
+                    <mat-select formControlName="level">
+                      <mat-option value="beginner">Beginner</mat-option>
+                      <mat-option value="intermediate">Intermediate</mat-option>
+                      <mat-option value="experienced">Experienced</mat-option>
+                      <mat-option value="advanced">Advanced</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

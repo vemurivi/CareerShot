@@ -1,0 +1,39 @@
+.profile-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .skills-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .skills-column {
+    background-color: #3B4A5A;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+  }
+  
+  .skills-column h3 {
+    margin-bottom: 15px;
+  }
+  
+  .skills-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills-column li {
+    margin-bottom: 10px;
+  }
+  

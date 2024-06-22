@@ -1,0 +1,11 @@
+<div class="skills-container" *ngIf="skills">
+    <div class="skills-column" *ngFor="let skillCategory of ['frontend', 'backend', 'devops']">
+      <h3>{{ skillCategory }} Development</h3>
+      <ul>
+        <li *ngFor="let skill of skills[skillCategory]">
+          {{ skill.name }} - {{ skill.level }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,24 @@
+
+
+<div class="app">
+<!-- Home component content -->
+<div class="home-content">
+  <div class="about-container" *ngIf="userProfile$ | async as userProfile">
+    <div class="profile">
+      <img [src]="userProfile.photoUrl" alt="{{ userProfile.name }}" class="profile-pic">
+    </div>
+    <div class="about-content">
+      <h1>{{userProfile.name}}</h1>
+      <h2>About Me</h2>
+      <p>{{ userProfile.description }}</p>
+
+      <!-- Social Media Icons -->
+      <div class="social-media">
+        <br/>
+        <a [href]="userProfile.linkedIn" target="_blank"><i class="material-icons">work</i></a>
+        <a [href]="userProfile.gitHub" target="_blank"><i class="material-icons">memory</i></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
