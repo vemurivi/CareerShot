@@ -24,10 +24,14 @@ jobs:
       - name: Build Angular app
         run: npm run build --prod
 
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: CareerShotWeb
           slot-name: production
-          publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
-          package: './dist/YOUR_ANGULAR_APP_NAME'
+          package: ./dist/YOUR_ANGULAR_APP_NAME
