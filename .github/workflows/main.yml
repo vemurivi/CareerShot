@@ -1,0 +1,33 @@
+name: Build and Deploy Angular App to Azure Web App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build --prod
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: CareerShotWeb
+          slot-name: production
+          publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
+          package: './dist/YOUR_ANGULAR_APP_NAME'
